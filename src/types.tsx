@@ -27,3 +27,10 @@ export type DietPlan = {
 	foods: Food[],
 	diets: Diet[]
 };
+
+export type Macros = {
+	protein: number,
+	carbs: number,
+	fat: number,
+	calories: number
+};
