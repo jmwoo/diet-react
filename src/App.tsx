@@ -6,6 +6,7 @@ const App: React.FC = () => {
   const [diet, setDiet] = useState<Diet | null>(null);
   const [foods, setFoods] = useState<{ [key: string]: Food }>({});
   const [isLoading, setIsLoading] = useState<boolean>(true);
+  const dietKey = 'jimmy-chow';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -19,8 +20,8 @@ const App: React.FC = () => {
       });
       setFoods(foods);
 
-      const diet = dietPlan.diets.find(diet => diet.key === 'jimmy-chow');
-      if (!diet) { throw new Error('jimmy-chow not found'); }
+      const diet = dietPlan.diets.find(diet => diet.key === dietKey);
+      if (!diet) { throw new Error(`${dietKey} not found`); }
       setDiet(diet);
       setIsLoading(false);
     }
@@ -34,7 +35,6 @@ const App: React.FC = () => {
   return (
     <div className="App">
       <h2>{diet?.name}</h2>
-      <h3>Meals</h3>
       <ul>
         {diet?.meals.map((meal: Meal, index: number) => (
           <li key={index}>
