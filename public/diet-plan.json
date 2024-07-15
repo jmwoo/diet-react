@@ -1,0 +1,187 @@
+{
+	"foods": [
+		{
+			"key": "skim-milk",
+			"name": "Skim Milk",
+			"unit": "cup",
+			"protein": 8,
+			"carbs": 12,
+			"fat": 0.2
+		},
+		{
+			"key": "oats",
+			"name": "Oats",
+			"unit": "cup",
+			"protein": 10,
+			"carbs": 54,
+			"fat": 5
+		},
+		{
+			"key": "protein-powder",
+			"name": "Protein Powder",
+			"unit": "scoop",
+			"protein": 24,
+			"carbs": 3,
+			"fat": 1.5
+		},
+		{
+			"key": "banana",
+			"name": "Banana",
+			"unit": "",
+			"protein": 1.3,
+			"carbs": 27,
+			"fat": 0.2
+		},
+		{
+			"key": "berries",
+			"name": "Berries",
+			"unit": "cup",
+			"protein": 1,
+			"carbs": 15,
+			"fat": 0.4
+		},
+		{
+			"key": "chicken-breast",
+			"name": "Chicken Breast",
+			"unit": "oz",
+			"protein": 6.47,
+			"carbs": 0,
+			"fat": 0.35
+		},
+		{
+			"key": "white-rice",
+			"name": "White Rice",
+			"unit": "cup",
+			"protein": 4.3,
+			"carbs": 44.5,
+			"fat": 0.4
+		},
+		{
+			"key": "carrots",
+			"name": "Carrots",
+			"unit": "cup",
+			"protein": 1.2,
+			"carbs": 12,
+			"fat": 0.3
+		},
+		{
+			"key": "hummus",
+			"name": "Hummus",
+			"unit": "container",
+			"protein": 4,
+			"carbs": 11,
+			"fat": 13
+		},
+		{
+			"key": "salmon",
+			"name": "Salmon",
+			"unit": "oz",
+			"protein": 6.65,
+			"carbs": 0,
+			"fat": 1.22
+		},
+		{
+			"key": "broccoli",
+			"name": "Broccoli",
+			"unit": "cup",
+			"protein": 2.3,
+			"carbs": 6.93,
+			"fat": 0.4
+		},
+		{
+			"key": "mixed-nuts",
+			"name": "Mixed Nuts",
+			"unit": "cup",
+			"protein": 20,
+			"carbs": 28,
+			"fat": 60
+		},
+		{
+			"key": "sweet-potato-sticks",
+			"name": "Sweet Potato Sticks",
+			"unit": "package",
+			"protein": 3,
+			"carbs": 53,
+			"fat": 0
+		}
+	],
+	"diets": [
+		{
+			"name": "Jimmy Chow",
+			"key": "jimmy-chow",
+			"meals": [
+				{
+					"name": "Breakfast",
+					"foodAmounts": [
+						{
+							"key": "skim-milk",
+							"amount": 1
+						},
+						{
+							"key": "oats",
+							"amount": 1
+						},
+						{
+							"key": "protein-powder",
+							"amount": 2
+						},
+						{
+							"key": "banana",
+							"amount": 1
+						},
+						{
+							"key": "berries",
+							"amount": 0.5
+						}
+					]
+				},
+				{
+					"name": "Lunch",
+					"foodAmounts": [
+						{
+							"key": "chicken-breast",
+							"amount": 10
+						},
+						{
+							"key": "white-rice",
+							"amount": 1
+						},
+						{
+							"key": "carrots",
+							"amount": 1
+						},
+						{
+							"key": "hummus",
+							"amount": 1
+						}
+					]
+				},
+				{
+					"name": "Dinner",
+					"foodAmounts": [
+						{
+							"key": "salmon",
+							"amount": 10
+						},
+						{
+							"key": "white-rice",
+							"amount": 1
+						},
+						{
+							"key": "broccoli",
+							"amount": 1
+						},
+						{
+							"key": "mixed-nuts",
+							"amount": 0.25
+						},
+						{
+							"key": "sweet-potato-sticks",
+							"amount": 1
+						}
+					]
+				}
+			]
+		}
+	]
+}
