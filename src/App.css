@@ -1,0 +1,34 @@
+.calories-emphasis {
+    color: red;
+    font-weight: bold;
+}
+.protein-emphasis {
+    color: blue;
+    font-weight: bold;
+}
+.carbs-emphasis {
+    color: green;
+    font-weight: bold;
+}
+.fat-emphasis {
+    color: orange;
+    font-weight: bold;
+}
+.meal-name {
+    font-weight: bold;
+}
+.meal {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    list-style: none;
+}
+.food {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    list-style-type: none;
+}
+
+ul .food::before {
+    content: "-";
+    margin-right: 1px;
+}

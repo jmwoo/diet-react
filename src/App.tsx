@@ -1,3 +1,4 @@
+import './App.css';
 import React, { useEffect, useState } from 'react';
 import {Food, FoodAmount, Meal, Diet, DietPlan, Macros } from './types'
 
@@ -123,29 +124,27 @@ const App: React.FC = () => {
           {diet?.meals.map((meal: Meal, index: number) => {
             const mealMacros = getMealMacros(meal.foodAmounts);
             return (
-                <li key={index}>
+                <li key={index} className="meal">
                   <span className="meal-name">{meal.name}</span>
                   <span className="macros">
-                <span
-                    className="macros-calories">&nbsp;(Calories: {displayMacroNumber(mealMacros.calories, true)},</span>
-                <span className="macros-protein">&nbsp;P: {displayMacroNumber(mealMacros.protein)},</span>
-                <span className="macros-carbs">&nbsp;C: {displayMacroNumber(mealMacros.carbs)},</span>
-                <span className="macros-fat">&nbsp;F: {displayMacroNumber(mealMacros.fat)})</span>
-              </span>
+                    <span className="macros-calories">&nbsp;(Calories: <span className="calories-emphasis">{displayMacroNumber(mealMacros.calories, true)}</span>,</span>
+                    <span className="macros-protein">&nbsp;P: <span className="protein-emphasis">{displayMacroNumber(mealMacros.protein)},</span></span>
+                    <span className="macros-carbs">&nbsp;C: <span className="carbs-emphasis">{displayMacroNumber(mealMacros.carbs)}</span>,</span>
+                    <span className="macros-fat">&nbsp;F: <span className="fat-emphasis">{displayMacroNumber(mealMacros.fat)}</span>)</span>
+                  </span>
                   <ul>
                     {meal.foodAmounts.map((foodAmount: FoodAmount, foodAmountIndex: number) => {
                       const food = foods[foodAmount.key];
                       const foodMacros = getFoodMacros(foodAmount, food);
                       return (
-                          <li key={foodAmountIndex}>
+                          <li key={foodAmountIndex} className="food">
                             <span className="food-description">{getFoodDescription(foodAmount, food)}</span>
                             <span className="macros">
-                        <span
-                            className="macros-calories">&nbsp;(Calories: {displayMacroNumber(foodMacros.calories, true)},</span>
-                        <span className="macros-protein">&nbsp;P: {displayMacroNumber(foodMacros.protein)},</span>
-                        <span className="macros-carbs">&nbsp;C: {displayMacroNumber(foodMacros.carbs)},</span>
-                        <span className="macros-fat">&nbsp;F: {displayMacroNumber(foodMacros.fat)})</span>
-                      </span>
+                              <span className="macros-calories">&nbsp;(Calories: <span className="calories-emphasis">{displayMacroNumber(foodMacros.calories, true)}</span>,</span>
+                              <span className="macros-protein">&nbsp;P: <span className="protein-emphasis">{displayMacroNumber(foodMacros.protein)}</span>,</span>
+                              <span className="macros-carbs">&nbsp;C: <span className="carbs-emphasis">{displayMacroNumber(foodMacros.carbs)}</span>,</span>
+                              <span className="macros-fat">&nbsp;F: <span className="fat-emphasis">{displayMacroNumber(foodMacros.fat)}</span>)</span>
+                            </span>
                           </li>
                       );
                     })}
@@ -156,12 +155,12 @@ const App: React.FC = () => {
         </ul>
 
         <h3>Total Macros</h3>
-        <div>Calories: {displayMacroNumber(dietMacros.calories, true)}</div>
-        <div>Protein: {displayMacroNumber(dietMacros.protein)}</div>
-        <div>Carbohydrates: {displayMacroNumber(dietMacros.carbs)}</div>
-        <div>Fats: {displayMacroNumber(dietMacros.fat)}</div>
+        <div>Calories: <span className="calories-emphasis">{displayMacroNumber(dietMacros.calories, true)}</span></div>
+        <div>Protein: <span className="protein-emphasis">{displayMacroNumber(dietMacros.protein)}</span></div>
+        <div>Carbohydrates: <span className="carbs-emphasis">{displayMacroNumber(dietMacros.carbs)}</span></div>
+        <div>Fats: <span className="fat-emphasis">{displayMacroNumber(dietMacros.fat)}</span></div>
       </div>
-  );
+);
 };
 
 export default App;
