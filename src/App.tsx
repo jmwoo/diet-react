@@ -127,10 +127,10 @@ const App: React.FC = () => {
                 <li key={index} className="meal">
                   <span className="meal-name">{meal.name}</span>
                   <span className="macros">
-                    <span className="macros-calories">&nbsp;(Calories: <span className="calories-emphasis">{displayMacroNumber(mealMacros.calories, true)}</span>,</span>
-                    <span className="macros-protein">&nbsp;P: <span className="protein-emphasis">{displayMacroNumber(mealMacros.protein)},</span></span>
-                    <span className="macros-carbs">&nbsp;C: <span className="carbs-emphasis">{displayMacroNumber(mealMacros.carbs)}</span>,</span>
-                    <span className="macros-fat">&nbsp;F: <span className="fat-emphasis">{displayMacroNumber(mealMacros.fat)}</span>)</span>
+                    <span className="macros-calories">(Calories: <span className="calories-emphasis">{displayMacroNumber(mealMacros.calories, true)}</span>,</span>
+                    <span className="macros-protein">P: <span className="protein-emphasis">{displayMacroNumber(mealMacros.protein)},</span></span>
+                    <span className="macros-carbs">C: <span className="carbs-emphasis">{displayMacroNumber(mealMacros.carbs)}</span>,</span>
+                    <span className="macros-fat">F: <span className="fat-emphasis">{displayMacroNumber(mealMacros.fat)}</span>)</span>
                   </span>
                   <ul>
                     {meal.foodAmounts.map((foodAmount: FoodAmount, foodAmountIndex: number) => {
@@ -140,10 +140,10 @@ const App: React.FC = () => {
                           <li key={foodAmountIndex} className="food">
                             <span className="food-description">{getFoodDescription(foodAmount, food)}</span>
                             <span className="macros">
-                              <span className="macros-calories">&nbsp;(Calories: <span className="calories-emphasis">{displayMacroNumber(foodMacros.calories, true)}</span>,</span>
-                              <span className="macros-protein">&nbsp;P: <span className="protein-emphasis">{displayMacroNumber(foodMacros.protein)}</span>,</span>
-                              <span className="macros-carbs">&nbsp;C: <span className="carbs-emphasis">{displayMacroNumber(foodMacros.carbs)}</span>,</span>
-                              <span className="macros-fat">&nbsp;F: <span className="fat-emphasis">{displayMacroNumber(foodMacros.fat)}</span>)</span>
+                              <span className="macros-calories">(Calories: <span className="calories-emphasis">{displayMacroNumber(foodMacros.calories, true)}</span>,</span>
+                              <span className="macros-protein">P: <span className="protein-emphasis">{displayMacroNumber(foodMacros.protein)}</span>,</span>
+                              <span className="macros-carbs">C: <span className="carbs-emphasis">{displayMacroNumber(foodMacros.carbs)}</span>,</span>
+                              <span className="macros-fat">F: <span className="fat-emphasis">{displayMacroNumber(foodMacros.fat)}</span>)</span>
                             </span>
                           </li>
                       );

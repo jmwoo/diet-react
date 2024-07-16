@@ -15,7 +15,8 @@
     font-weight: bold;
 }
 .meal-name {
-    font-weight: bold;
+    font-size: 20px;
+    text-decoration: underline;
 }
 .meal {
     margin-top: 1em;
@@ -31,4 +32,16 @@
 ul .food::before {
     content: "-";
     margin-right: 1px;
+}
+.macros {
+    margin-left: 5px;
+}
+.macros-protein {
+    margin-left: 5px;
+}
+.macros-carbs {
+    margin-left: 5px;
+}
+.macros-fat {
+    margin-left: 5px;
 }
