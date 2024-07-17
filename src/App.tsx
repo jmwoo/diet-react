@@ -93,7 +93,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/diet-plan.json');
+      const response = await fetch('/assets/diet-plan.json');
       if (!response.ok) { throw new Error(response.statusText); }
       const dietPlan: DietPlan = await response.json();
 
@@ -119,7 +119,7 @@ const App: React.FC = () => {
 
   return (
       <div className="App">
-        <h2>{diet?.name}</h2>
+        <h1>{diet?.name}</h1>
         <ul>
           {diet?.meals.map((meal: Meal, index: number) => {
             const mealMacros = getMealMacros(meal.foodAmounts);
