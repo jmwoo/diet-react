@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useEffect, useState } from 'react';
 import {Food, FoodAmount, Meal, Diet, DietPlan, Macros } from './types'
+import pluralize from 'pluralize';
 
 const App: React.FC = () => {
   const [diet, setDiet] = useState<Diet | null>(null);
@@ -9,7 +10,7 @@ const App: React.FC = () => {
   const dietKey = 'jimmy-chow';
 
   function getFoodDescription(foodAmount: FoodAmount, food: Food) : string {
-    return `${foodAmount.amount} ${food?.unit == '' ? food?.unit : food?.unit + ' of '} ${food?.name}`;
+    return `${foodAmount.amount} ${food?.unit == '' ? food?.unit : pluralize(food?.unit, foodAmount.amount) + ' of '} ${food?.name}`;
   }
   
   function getDietMacros(meals: Meal[]) : Macros {
@@ -170,7 +171,7 @@ const App: React.FC = () => {
         <div>Fats: <span className="fat-emphasis">{displayMacroNumber(dietMacros.fat)}</span></div>
 
         <div className="source-link">
-          <a href="https://github.com/jmwoo/diet-react" target="_blank">Source</a>
+          <a href="https://github.com/jmwoo/diet-react" target="_blank">source</a>
         </div>
       </div>
 );
