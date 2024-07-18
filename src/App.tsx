@@ -163,7 +163,7 @@ const App: React.FC = () => {
         <div>Fats: <span className="fat-emphasis">{displayMacroNumber(dietMacros.fat)}</span></div>
 
         <div className="source-link">
-          <a href="https://github.com/jmwoo/diet-react">Source</a>
+          <a href="https://github.com/jmwoo/diet-react" target="_blank">Source</a>
         </div>
       </div>
 );
