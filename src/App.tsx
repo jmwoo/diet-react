@@ -160,9 +160,9 @@ const App: React.FC = () => {
         <div>Carbohydrates: <span className="carbs-emphasis">{displayMacroNumber(dietMacros.carbs)}</span></div>
         <div>Fats: <span className="fat-emphasis">{displayMacroNumber(dietMacros.fat)}</span></div>
 
-        <p>
+        <div className="source-link">
           <a href="https://github.com/jmwoo/diet-react">Source</a>
-        </p>
+        </div>
       </div>
 );
 };

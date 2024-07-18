@@ -45,3 +45,6 @@ ul .food::before {
 .macros-fat {
     margin-left: 5px;
 }
+.source-link {
+    margin-top: 1em;
+}
