@@ -9,6 +9,30 @@
 			"fat": 0.2
 		},
 		{
+			"key": "1-percent-milk",
+			"name": "1% Low Fat Milk",
+			"unit": "cup",
+			"protein": 8,
+			"carbs": 13,
+			"fat": 2.5
+		},
+		{
+			"key": "2-percent-milk",
+			"name": "2% Reduced Fat Milk",
+			"unit": "cup",
+			"protein": 8,
+			"carbs": 12,
+			"fat": 5
+		},
+		{
+			"key": "whole-milk",
+			"name": "Whole Milk",
+			"unit": "cup",
+			"protein": 8,
+			"carbs": 13,
+			"fat": 8
+		},
+		{
 			"key": "oats",
 			"name": "Oats",
 			"unit": "cup",
@@ -103,6 +127,22 @@
 			"protein": 3,
 			"carbs": 53,
 			"fat": 0
+		},
+		{
+			"key": "sweet-potato",
+			"name": "Sweet Potato",
+			"unit": "oz",
+			"protein": 0.45,
+			"carbs": 5.7,
+			"fat": 0.01
+		},
+		{
+			"key": "avocado-cup",
+			"name": "Avocado",
+			"unit": "minicup",
+			"protein": 1,
+			"carbs": 5,
+			"fat": 12
 		}
 	],
 	"diets": [
@@ -114,12 +154,12 @@
 					"name": "Breakfast",
 					"foodAmounts": [
 						{
-							"key": "skim-milk",
+							"key": "1-percent-milk",
 							"amount": 1
 						},
 						{
 							"key": "oats",
-							"amount": 1
+							"amount": 0.75
 						},
 						{
 							"key": "protein-powder",
@@ -164,10 +204,6 @@
 							"amount": 10
 						},
 						{
-							"key": "white-rice",
-							"amount": 1
-						},
-						{
 							"key": "broccoli",
 							"amount": 1
 						},
@@ -176,8 +212,8 @@
 							"amount": 0.25
 						},
 						{
-							"key": "sweet-potato-sticks",
-							"amount": 1
+							"key": "sweet-potato",
+							"amount": 5
 						}
 					]
 				}
