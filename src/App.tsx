@@ -93,7 +93,9 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch('/assets/diet-plan.json');
+      const dietPlanUrl = 'https://gist.githubusercontent.com/jmwoo/13a5fdcc8e07dbf81267289ac011412e/raw/8cbf1f6773c5f2e219ffd8045f4740c48ea5eda3/diet-plan.json';
+      // const dietPlanUrl = '/assets/diet-plan.json';
+      const response = await fetch(dietPlanUrl);
       if (!response.ok) { throw new Error(response.statusText); }
       const dietPlan: DietPlan = await response.json();
 
