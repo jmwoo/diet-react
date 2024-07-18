@@ -48,3 +48,7 @@ ul .food::before {
 .source-link {
     margin-top: 1em;
 }
+.meals {
+    margin-bottom: 3em;
+    background-color: #f8f8f8;
+}
