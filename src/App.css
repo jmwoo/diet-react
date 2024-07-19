@@ -49,6 +49,7 @@ ul .food::before {
     margin-top: 1em;
 }
 .meals {
-    margin-bottom: 3em;
+    margin-bottom: 1em;
     background-color: #f8f8f8;
+    padding: 1em;
 }
