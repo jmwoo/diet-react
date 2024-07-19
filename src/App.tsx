@@ -91,7 +91,7 @@ const App: React.FC = () => {
     if (isCalories) {
       return ret;
     }
-    return ret + 'g';
+    return ret + ' g';
   }
 
   useEffect(() => {
@@ -139,13 +139,13 @@ const App: React.FC = () => {
                           <li key={foodAmountIndex} className="food">
                             <span className="food-description">{getFoodDescription(foodAmount, food)}</span>
                             <span className="macros">
-                                <span className="macros-calories">(Calories: <span
+                                <span className="macros-calories">(cal: <span
                                     className="calories-emphasis">{displayMacroNumber(foodMacros.calories, true)}</span>,</span>
-                                <span className="macros-protein">P: <span
+                                <span className="macros-protein">p: <span
                                     className="protein-emphasis">{displayMacroNumber(foodMacros.protein)}</span>,</span>
-                                <span className="macros-carbs">C: <span
+                                <span className="macros-carbs">c: <span
                                     className="carbs-emphasis">{displayMacroNumber(foodMacros.carbs)}</span>,</span>
-                                <span className="macros-fat">F: <span
+                                <span className="macros-fat">f: <span
                                     className="fat-emphasis">{displayMacroNumber(foodMacros.fat)}</span>)</span>
                               </span>
                           </li>
@@ -155,23 +155,22 @@ const App: React.FC = () => {
                 </li>
 
                 <ul>
-                  <h4>Total {meal.name} Macros</h4>
-                  <div>Calories: <span
-                      className="calories-emphasis">{displayMacroNumber(mealMacros.calories, true)}</span></div>
+                  <h4>{meal.name} Totals</h4>
+                  <div>Calories: <span className="calories-emphasis">{displayMacroNumber(mealMacros.calories, true)}</span></div>
                   <div>Protein: <span className="protein-emphasis">{displayMacroNumber(mealMacros.protein)}</span></div>
                   <div>Carbohydrates: <span className="carbs-emphasis">{displayMacroNumber(mealMacros.carbs)}</span></div>
-                  <div>Fats: <span className="fat-emphasis">{displayMacroNumber(mealMacros.fat)}</span></div>
+                  <div>Fat: <span className="fat-emphasis">{displayMacroNumber(mealMacros.fat)}</span></div>
                 </ul>
               </ul>
           )
         })}
 
         <div className="section-block">
-          <h3>Total Daily Macros</h3>
+          <h3>Daily Totals</h3>
           <div>Calories: <span className="calories-emphasis">{displayMacroNumber(dietMacros.calories, true)}</span></div>
           <div>Protein: <span className="protein-emphasis">{displayMacroNumber(dietMacros.protein)}</span></div>
           <div>Carbohydrates: <span className="carbs-emphasis">{displayMacroNumber(dietMacros.carbs)}</span></div>
-          <div>Fats: <span className="fat-emphasis">{displayMacroNumber(dietMacros.fat)}</span></div>
+          <div>Fat: <span className="fat-emphasis">{displayMacroNumber(dietMacros.fat)}</span></div>
         </div>
 
         <div className="source-link">
