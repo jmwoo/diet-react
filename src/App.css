@@ -53,3 +53,9 @@ ul .food::before {
     background-color: #f8f8f8;
     padding: 1em;
 }
+
+.total-macros {
+    margin-bottom: 1em;
+    background-color: #f8f8f8;
+    padding: 1em;
+}
