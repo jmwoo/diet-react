@@ -48,14 +48,9 @@ ul .food::before {
 .source-link {
     margin-top: 1em;
 }
-.meals {
+.section-block {
     margin-bottom: 1em;
-    background-color: #f8f8f8;
+    background-color: #F4F4F4;
     padding: 1em;
-}
-
-.total-macros {
-    margin-bottom: 1em;
-    background-color: #f8f8f8;
-    padding: 1em;
+    border-radius: 25px;
 }

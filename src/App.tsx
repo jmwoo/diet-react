@@ -128,7 +128,7 @@ const App: React.FC = () => {
         {diet?.meals.map((meal: Meal, index: number) => {
           const mealMacros = getMealMacros(meal.foodAmounts);
           return (
-              <ul className="meals">
+              <ul className="section-block">
                 <li key={index} className="meal">
                   <span className="meal-name">{meal.name}</span>
                   <ul>
@@ -166,7 +166,7 @@ const App: React.FC = () => {
           )
         })}
 
-        <div className="total-macros">
+        <div className="section-block">
           <h3>Total Daily Macros</h3>
           <div>Calories: <span className="calories-emphasis">{displayMacroNumber(dietMacros.calories, true)}</span></div>
           <div>Protein: <span className="protein-emphasis">{displayMacroNumber(dietMacros.protein)}</span></div>
