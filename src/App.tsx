@@ -10,7 +10,8 @@ const App: React.FC = () => {
   const dietKey = 'jimmy-chow';
 
   function getFoodDescription(foodAmount: FoodAmount, food: Food) : string {
-    return `${foodAmount.amount} ${food?.unit == '' ? food?.unit : pluralize(food?.unit, foodAmount.amount) + ' of '} ${food?.name}`;
+    const hasUnit = food?.unit != '';
+    return `${foodAmount.amount} ${hasUnit ? pluralize(food?.unit, foodAmount.amount) +  ' of ' : ''} ${hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount)}`;
   }
   
   function getDietMacros(meals: Meal[]) : Macros {
