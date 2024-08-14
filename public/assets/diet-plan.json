@@ -2,7 +2,7 @@
 	"foods": [
 		{
 			"key": "skim-milk",
-			"name": "Skim Milk",
+			"name": "skim milk",
 			"unit": "cup",
 			"protein": 8,
 			"carbs": 12,
@@ -10,7 +10,7 @@
 		},
 		{
 			"key": "1-percent-milk",
-			"name": "1% Low Fat Milk",
+			"name": "1% low-fat milk",
 			"unit": "cup",
 			"protein": 8,
 			"carbs": 13,
@@ -18,7 +18,7 @@
 		},
 		{
 			"key": "2-percent-milk",
-			"name": "2% Reduced Fat Milk",
+			"name": "2% reduced-fat milk",
 			"unit": "cup",
 			"protein": 8,
 			"carbs": 12,
@@ -26,7 +26,7 @@
 		},
 		{
 			"key": "whole-milk",
-			"name": "Whole Milk",
+			"name": "whole milk",
 			"unit": "cup",
 			"protein": 8,
 			"carbs": 13,
@@ -34,7 +34,7 @@
 		},
 		{
 			"key": "oats",
-			"name": "Oats",
+			"name": "oats",
 			"unit": "cup",
 			"protein": 10,
 			"carbs": 54,
@@ -42,7 +42,7 @@
 		},
 		{
 			"key": "protein-powder",
-			"name": "Protein Powder",
+			"name": "protein powder",
 			"unit": "scoop",
 			"protein": 24,
 			"carbs": 3,
@@ -50,7 +50,7 @@
 		},
 		{
 			"key": "banana",
-			"name": "Banana",
+			"name": "banana",
 			"unit": "",
 			"protein": 1.3,
 			"carbs": 27,
@@ -58,7 +58,7 @@
 		},
 		{
 			"key": "berries",
-			"name": "Berries",
+			"name": "berries",
 			"unit": "cup",
 			"protein": 1,
 			"carbs": 15,
@@ -66,7 +66,7 @@
 		},
 		{
 			"key": "chicken-breast",
-			"name": "Chicken Breast",
+			"name": "chicken breast",
 			"unit": "oz",
 			"protein": 6.47,
 			"carbs": 0,
@@ -74,7 +74,7 @@
 		},
 		{
 			"key": "white-rice",
-			"name": "White Rice",
+			"name": "white rice",
 			"unit": "cup",
 			"protein": 4.3,
 			"carbs": 44.5,
@@ -82,7 +82,7 @@
 		},
 		{
 			"key": "carrots",
-			"name": "Carrots",
+			"name": "carrots",
 			"unit": "cup",
 			"protein": 1.2,
 			"carbs": 12,
@@ -90,7 +90,7 @@
 		},
 		{
 			"key": "hummus",
-			"name": "Hummus",
+			"name": "hummus",
 			"unit": "container",
 			"protein": 4,
 			"carbs": 11,
@@ -98,7 +98,7 @@
 		},
 		{
 			"key": "salmon",
-			"name": "Salmon",
+			"name": "salmon",
 			"unit": "oz",
 			"protein": 6.65,
 			"carbs": 0,
@@ -106,7 +106,7 @@
 		},
 		{
 			"key": "broccoli",
-			"name": "Broccoli",
+			"name": "broccoli",
 			"unit": "cup",
 			"protein": 2.3,
 			"carbs": 6.93,
@@ -114,7 +114,7 @@
 		},
 		{
 			"key": "mixed-nuts",
-			"name": "Mixed Nuts",
+			"name": "mixed nuts",
 			"unit": "cup",
 			"protein": 20,
 			"carbs": 28,
@@ -122,7 +122,7 @@
 		},
 		{
 			"key": "sweet-potato-sticks",
-			"name": "Sweet Potato Sticks",
+			"name": "sweet potato sticks",
 			"unit": "package",
 			"protein": 3,
 			"carbs": 53,
@@ -138,7 +138,7 @@
 		},
 		{
 			"key": "avocado-cup",
-			"name": "Avocado",
+			"name": "avocado",
 			"unit": "minicup",
 			"protein": 1,
 			"carbs": 5,
@@ -154,12 +154,12 @@
 					"name": "Breakfast",
 					"foodAmounts": [
 						{
-							"key": "1-percent-milk",
-							"amount": 1
+							"key": "skim-milk",
+							"amount": 1.25
 						},
 						{
 							"key": "oats",
-							"amount": 0.75
+							"amount": 0.67
 						},
 						{
 							"key": "protein-powder",
