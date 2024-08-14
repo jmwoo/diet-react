@@ -12,7 +12,68 @@ const App: React.FC = () => {
 
   function getFoodDescription(foodAmount: FoodAmount, food: Food) : string {
     const hasUnit = food?.unit != '';
-    return `${foodAmount.amount} ${hasUnit ? pluralize(food?.unit, foodAmount.amount) +  ' of ' : ''} ${hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount)}`;
+    let amount = foodAmount.amount.toFixed(2);
+    if (willDisplayDescriptionAsHtml(foodAmount, food)) {
+      amount = decimalToFraction(foodAmount.amount);
+    }
+    return `${amount} ${hasUnit ? pluralize(food?.unit, foodAmount.amount) +  ' of ' : ''} ${hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount)}`;
+  }
+  
+  function willDisplayDescriptionAsHtml(foodAmount: FoodAmount, food: Food) : boolean {
+    return ['cup', 'tbsp', 'tsp'].includes(food.unit) && foodAmount.amount % 1 !== 0;
+  }
+
+  function gcd(a: number, b: number): number {
+    return b ? gcd(b, a % b) : a;
+  }
+
+  function decimalToFraction(decimal: number): string {
+    // Handle special cases
+    if (decimal === 0) return "0";
+    if (Number.isInteger(decimal)) return decimal.toString();
+
+    // Separate the integer and fractional parts
+    const sign = decimal < 0 ? "-" : "";
+    const absDecimal = Math.abs(decimal);
+    const integerPart = Math.floor(absDecimal);
+    let fractionalPart = absDecimal - integerPart;
+
+    // Predefined list of common fractions
+    const commonFractions: [number, number][] = [
+      [1, 2], [1, 3], [2, 3], [1, 4], [3, 4], [1, 5], [2, 5], [3, 5], [4, 5],
+      [1, 6], [5, 6], [1, 7], [2, 7], [3, 7], [4, 7], [5, 7], [6, 7],
+      [1, 8], [3, 8], [5, 8], [7, 8], [1, 9], [2, 9], [4, 9], [5, 9], [7, 9], [8, 9],
+      [1, 10], [3, 10], [7, 10], [9, 10]
+    ];
+
+    let bestNumerator = 1;
+    let bestDenominator = 1;
+    let bestError = Infinity;
+
+    // Check predefined common fractions
+    for (const [numerator, denominator] of commonFractions) {
+      const error = Math.abs(fractionalPart - numerator / denominator);
+      if (error < bestError) {
+        bestError = error;
+        bestNumerator = numerator;
+        bestDenominator = denominator;
+      }
+    }
+
+    // Simplify the fraction
+    const divisor = gcd(bestNumerator, bestDenominator);
+    bestNumerator = bestNumerator / divisor;
+    bestDenominator = bestDenominator / divisor;
+
+    // Construct the fraction string
+    let fractionStr = `<math><mfrac><mn>${bestNumerator}</mn><mn>${bestDenominator}</mn></mfrac></math>`;
+
+    // Combine with integer part if necessary
+    if (integerPart > 0) {
+      return `${sign}${integerPart}${fractionStr}`;
+    } else {
+      return sign + fractionStr;
+    }
   }
   
   function getDietMacros(meals: Meal[]) : Macros {
@@ -96,8 +157,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const dietPlanUrl = 'https://raw.githubusercontent.com/jmwoo/static-data/main/diet-plan.json';
-      // const dietPlanUrl = '/assets/diet-plan.json';
+      // const dietPlanUrl = 'https://raw.githubusercontent.com/jmwoo/static-data/main/diet-plan.json';
+      const dietPlanUrl = '/assets/diet-plan.json';
       const response = await fetch(dietPlanUrl);
       if (!response.ok) { throw new Error(response.statusText); }
       const dietPlan: DietPlan = await response.json();
