@@ -13,13 +13,26 @@ const App: React.FC = () => {
   function getFoodDescription(foodAmount: FoodAmount, food: Food) : string {
     const hasUnit = food?.unit != '';
     let amount = foodAmount.amount.toFixed(2);
-    if (willDisplayDescriptionAsHtml(foodAmount, food)) {
+    if (shouldDisplayDescriptionAsFraction(foodAmount, food)) {
       amount = decimalToFraction(foodAmount.amount);
     }
     return `${amount} ${hasUnit ? pluralize(food?.unit, foodAmount.amount) +  ' of ' : ''} ${hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount)}`;
   }
+
+  function getFoodDescriptionAsHtml(foodAmount: FoodAmount, food: Food): string {
+    const hasUnit = food?.unit !== '';
+    let foodAmountFormatted = foodAmount.amount.toString();
+    if (shouldDisplayDescriptionAsFraction(foodAmount, food)) {
+      foodAmountFormatted = decimalToFraction(foodAmount.amount);
+    }
+
+    const unitPart = hasUnit ? `${pluralize(food?.unit, foodAmount.amount)} of ` : '';
+    const namePart = hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount);
+
+    return `${foodAmountFormatted} ${unitPart}${namePart}`;
+  }
   
-  function willDisplayDescriptionAsHtml(foodAmount: FoodAmount, food: Food) : boolean {
+  function shouldDisplayDescriptionAsFraction(foodAmount: FoodAmount, food: Food) : boolean {
     return ['cup', 'tbsp', 'tsp'].includes(food.unit) && foodAmount.amount % 1 !== 0;
   }
 
@@ -198,7 +211,8 @@ const App: React.FC = () => {
                       const foodMacros = getFoodMacros(foodAmount, food);
                       return (
                           <li key={foodAmountIndex} className="food">
-                            <span className="food-description">{getFoodDescription(foodAmount, food)}</span>
+                            {/*<span className="food-description">{getFoodDescriptionAsHtml(foodAmount, food)}</span>*/}
+                            <span className="food-description" dangerouslySetInnerHTML={{__html: getFoodDescriptionAsHtml(foodAmount, food)}}></span>
                             <span className="macros">
                                 <span className="macros-calories">(cal: <span
                                     className="calories-emphasis">{displayMacroNumber(foodMacros.calories, true)}</span>,</span>
@@ -216,7 +230,7 @@ const App: React.FC = () => {
                 </li>
 
                 <ul>
-                  <h4>{meal.name} Totals</h4>
+                <h4>{meal.name} Totals</h4>
                   <div>Calories: <span className="calories-emphasis">{displayMacroNumber(mealMacros.calories, true)}</span></div>
                   <div>Protein: <span className="protein-emphasis">{displayMacroNumber(mealMacros.protein)}</span></div>
                   <div>Carbohydrates: <span className="carbs-emphasis">{displayMacroNumber(mealMacros.carbs)}</span></div>
@@ -238,7 +252,7 @@ const App: React.FC = () => {
           <a href="https://github.com/jmwoo/diet-react" target="_blank">source</a>
         </div>
       </div>
-);
+  );
 };
 
 export default App;

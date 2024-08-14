@@ -30,8 +30,11 @@
 }
 
 ul .food::before {
-    content: "-";
+    content: "• ";
     margin-right: 1px;
+}
+math mn {
+    font-size: 1em;
 }
 .macros {
     margin-left: 5px;
