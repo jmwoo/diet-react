@@ -16,7 +16,7 @@ const App: React.FC = () => {
     if (shouldDisplayDescriptionAsFraction(foodAmount, food)) {
       amount = decimalToFraction(foodAmount.amount);
     }
-    return `${amount} ${hasUnit ? pluralize(food?.unit, foodAmount.amount) +  ' of ' : ''} ${hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount)}`;
+    return `${amount} ${hasUnit ? pluralize(food?.unit, foodAmount.amount) +  '' : ''} ${hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount)}`;
   }
 
   function getFoodDescriptionAsHtml(foodAmount: FoodAmount, food: Food): string {
@@ -26,7 +26,7 @@ const App: React.FC = () => {
       foodAmountFormatted = decimalToFraction(foodAmount.amount);
     }
 
-    const unitPart = hasUnit ? `${pluralize(food?.unit, foodAmount.amount)} of ` : '';
+    const unitPart = hasUnit ? `${pluralize(food?.unit, foodAmount.amount)} ` : '';
     const namePart = hasUnit ? food?.name : pluralize(food?.name, foodAmount.amount);
 
     return `${foodAmountFormatted} ${unitPart}${namePart}`;
