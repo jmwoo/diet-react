@@ -170,8 +170,8 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // const dietPlanUrl = 'https://raw.githubusercontent.com/jmwoo/static-data/main/diet-plan.json';
-      const dietPlanUrl = '/assets/diet-plan.json';
+      const dietPlanUrl = 'https://raw.githubusercontent.com/jmwoo/static-data/main/diet-plan.json';
+      // const dietPlanUrl = '/assets/diet-plan.json';
       const response = await fetch(dietPlanUrl);
       if (!response.ok) { throw new Error(response.statusText); }
       const dietPlan: DietPlan = await response.json();
