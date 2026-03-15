@@ -82,7 +82,7 @@
 		},
 		{
 			"key": "carrots",
-			"name": "carrots",
+			"name": "carrots (or any veggie)",
 			"unit": "cup",
 			"protein": 1.2,
 			"carbs": 12,
@@ -143,6 +143,30 @@
 			"protein": 1,
 			"carbs": 5,
 			"fat": 12
+		},
+		{
+			"key": "smart-choice-fudge-bar",
+			"name": "smart choice fudge bar",
+			"unit": "",
+			"protein": 3,
+			"carbs": 19,
+			"fat": 1
+		},
+		{
+			"key": "smart-choice-fudge-bar",
+			"name": "smart choice fudge bar",
+			"unit": "",
+			"protein": 3,
+			"carbs": 19,
+			"fat": 1
+		},
+		{
+			"key": "veggie-soup",
+			"name": "veggie soup",
+			"unit": "bowl",
+			"protein": 3,
+			"carbs": 18,
+			"fat": 7
 		}
 	],
 	"diets": [
@@ -151,19 +175,11 @@
 			"key": "jimmy-chow",
 			"meals": [
 				{
-					"name": "Breakfast",
+					"name": "Pre-Breakfast",
 					"foodAmounts": [
 						{
-							"key": "skim-milk",
-							"amount": 1.25
-						},
-						{
-							"key": "oats",
-							"amount": 0.67
-						},
-						{
-							"key": "protein-powder",
-							"amount": 2
+							"key": "carrots",
+							"amount": 1.5
 						},
 						{
 							"key": "banana",
@@ -172,6 +188,23 @@
 						{
 							"key": "berries",
 							"amount": 0.5
+						}
+					]
+				},
+				{
+					"name": "Breakfast",
+					"foodAmounts": [
+						{
+							"key": "whole-milk",
+							"amount": 1
+						},
+						{
+							"key": "oats",
+							"amount": 0.5
+						},
+						{
+							"key": "protein-powder",
+							"amount": 2
 						}
 					]
 				},
@@ -187,11 +220,7 @@
 							"amount": 1
 						},
 						{
-							"key": "carrots",
-							"amount": 1
-						},
-						{
-							"key": "hummus",
+							"key": "veggie-soup",
 							"amount": 1
 						}
 					]
@@ -210,10 +239,15 @@
 						{
 							"key": "mixed-nuts",
 							"amount": 0.25
-						},
+						}
+					]
+				},
+				{
+					"name": "Dessert",
+					"foodAmounts": [
 						{
-							"key": "sweet-potato",
-							"amount": 5
+							"key": "smart-choice-fudge-bar",
+							"amount": 1
 						}
 					]
 				}
